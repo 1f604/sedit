@@ -1,0 +1,9 @@
+# ignore everything
+*
+
+# except these files
+!.gitignore
+!cryptotest.py
+!screate.py
+!sopen.py
+!readme.md
