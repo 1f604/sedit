@@ -3,15 +3,15 @@ from cryptotest import encrypt
 
 def getpassword() -> str:
     """
-        This function has been manually tested. 
-        
-        It successfully detects and exits when user enters a blank password, 
-        or when the user enters 2 passwords that don't match. 
+        This function has been manually tested.
+
+        It successfully detects and exits when user enters a blank password,
+        or when the user enters 2 passwords that don't match.
     """
     password1 = getpass.getpass("Enter a password: ")
     password2 = getpass.getpass("Enter the password again: ")
-    if (password1 != password2):
-        print("Passwords do not match.") 
+    if password1 != password2:
+        print("Passwords do not match.")
         exit(1)
     if not password1:
         print("YOU MUST ENTER A PASSWORD!")
@@ -37,12 +37,11 @@ def createfile(filename: str) -> str:
         print(e)
         print("An error occurred while creating the file. See above.")
         exit(1)
-    return password
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Usage: screate.py filename")
         exit(0)
-    filename = sys.argv[1]
-    filename = os.path.abspath(filename) # just for insurance.
-    password = createfile(filename)
+    fn = sys.argv[1]
+    fn = os.path.abspath(fn) # just for insurance.
+    createfile(fn)

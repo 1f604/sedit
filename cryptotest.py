@@ -8,7 +8,7 @@ def _keygen(password: str): #key generation algorithm, not used outside this fil
     """
     Takes a password string and returns a key.
 
-    We don't need to salt the password since we're not storing it anywhere in any form. 
+    We don't need to salt the password since we're not storing it anywhere in any form.
 
     Parameters are hardcoded so you don't have to store or pass them.
     """
@@ -23,10 +23,10 @@ def _keygen(password: str): #key generation algorithm, not used outside this fil
 
 def encrypt(plaintext: str, password: str) -> bytes:
     """
-        pynacl includes the nonce (iv), tag, and ciphertext in the result from box.encrypt. 
+        pynacl includes the nonce (iv), tag, and ciphertext in the result from box.encrypt.
 
         According to the pynacl docs, the returned value will be exactly 40 bytes longer
-        than the plaintext as it contains the 24 byte random nonce and the 16 byte MAC. 
+        than the plaintext as it contains the 24 byte random nonce and the 16 byte MAC.
     """
     plaintext = plaintext.encode('utf-8')
     key = _keygen(password)
@@ -40,9 +40,9 @@ def decrypt(encrypted: bytes, password: str) -> str:
 
         We then use Python's UTF-8 decoder to convert that to a string.
 
-        This function is only used in sopen.py. It is not used in screate.py. 
+        This function is only used in sopen.py. It is not used in screate.py.
 
-        WARNING: This function NEEDS to be wrapped in a try-catch block, because decryption and decoding can and will raise exceptions. 
+        WARNING: This function NEEDS to be wrapped in a try-catch block, because decryption and decoding can and will raise exceptions.
     """
     key = _keygen(password)
     box = nacl.secret.SecretBox(key)
@@ -51,7 +51,7 @@ def decrypt(encrypted: bytes, password: str) -> str:
     return plaintextstring
 
 
-# test function to test the encrypt/decrypt utility works. 
+# test function to test the encrypt/decrypt utility works.
 def test():
     """
     usage:
