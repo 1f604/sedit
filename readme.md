@@ -16,7 +16,6 @@ Table of contents:
   - [Security](#security)
   - [Availability](#availability)
 - [Keyboard shortcuts:](#keyboard-shortcuts)
-- [Please be aware that the undo function is somewhat buggy so don't count on being able to undo any changes you make to the file.](#please-be-aware-that-the-undo-function-is-somewhat-buggy-so-dont-count-on-being-able-to-undo-any-changes-you-make-to-the-file)
 
 # sedit - automatically encrypting text editor
 
@@ -200,4 +199,4 @@ If your file gets corrupted while it's open in the text editor, there is no sane
 
 Substitute Ctrl for Cmd if you're using a Mac keyboard. 
 
-# Please be aware that the undo function is somewhat buggy so don't count on being able to undo any changes you make to the file. 
+Please report any bugs you find in Issues (ideally with steps to reproduce, and expected behavior). I check my emails every day and I am the active maintainer for this project.
