@@ -208,9 +208,8 @@ class WindowManager(object):
     # Select current line in textbox
     def select_line(self, event):
         tk.current_line = self.text.index(tk.INSERT)
-        self.text.tag_add(tk.SEL, "insert linestart", "insert lineend+1c")
+        self.text.tag_add(tk.SEL, "insert linestart-1c", "insert lineend")
         return 'break'
-        #after(interval, self._highlight_current_line)
 
     def __init__(self, root, filename, contents, password):
         # initialize "global" variables
